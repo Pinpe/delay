@@ -7,84 +7,79 @@ import type {
 } from "./types/config";
 import { LinkPreset } from "./types/config";
 
+// 网站基础配置
 export const siteConfig: SiteConfig = {
-	title: "Fuwari",
-	subtitle: "Demo Site",
-	lang: "en", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
+	title: "Delay社", // 网站标题
+	subtitle: "ACGN同人社团", // 网站副标题
+	lang: "zh_CN", // 网站语言: 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
-		hue: 250, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
-		fixed: false, // Hide the theme color picker for visitors
+		hue: 200, // 主题色相值(0-360)，例如红色:0，蓝绿色:200，青色:250，粉色:345
+		fixed: true, // 是否对访客隐藏主题颜色选择器
 	},
 	banner: {
-		enable: false,
-		src: "assets/images/demo-banner.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
+		enable: true, // 是否启用横幅
+		src: "assets/images/COVER 2024 2.png", // 横幅图片路径(相对于/src目录。如果以'/'开头则相对于/public目录)
+		position: "center", // 图片定位(等同于object-position)，仅支持'top','center','bottom'
 		credit: {
-			enable: false, // Display the credit text of the banner image
-			text: "", // Credit text to be displayed
-			url: "", // (Optional) URL link to the original artwork or artist's page
+			enable: true, // 是否显示横幅图片版权信息
+			text: "柠檬片儿", // 版权文本
+			url: "", // (可选)原作品或艺术家页面的URL链接
 		},
 	},
 	toc: {
-		enable: true, // Display the table of contents on the right side of the post
-		depth: 2, // Maximum heading depth to show in the table, from 1 to 3
+		enable: true, // 是否在文章右侧显示目录
+		depth: 2, // 目录显示的最大标题层级(1-3)
 	},
-	favicon: [
-		// Leave this array empty to use the default favicon
+	favicon: [ // 网站图标配置，留空则使用默认图标
 		// {
-		//   src: '/favicon/icon.png',    // Path of the favicon, relative to the /public directory
-		//   theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-		//   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
+		//   src: '/favicon/icon.png',    // 图标路径(相对于/public目录)
+		//   theme: 'light',              // (可选)'light'或'dark'，仅在需要为深浅模式设置不同图标时使用
+		//   sizes: '32x32',              // (可选)图标尺寸，仅在需要不同尺寸图标时设置
 		// }
 	],
 };
 
+// 导航栏配置
 export const navBarConfig: NavBarConfig = {
 	links: [
-		LinkPreset.Home,
-		LinkPreset.Archive,
-		LinkPreset.About,
+		LinkPreset.Home, // 首页链接预设
 		{
-			name: "GitHub",
-			url: "https://github.com/saicaca/fuwari", // Internal links should not include the base path, as it is automatically added
-			external: true, // Show an external link icon and will open in a new tab
+			name: "企划", // 链接名称
+			url: "#", // 链接URL(内部链接不应包含基础路径)
+		},
+		LinkPreset.About, // 关于链接预设
+		LinkPreset.Archive, // 归档链接预设
+		{
+			name: "画廊",
+			url: '#'
+		},
+		{
+			name: "联系", // 链接名称
+			url: "#", // 链接URL(内部链接不应包含基础路径)
 		},
 	],
 };
 
+// 个人资料配置
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/demo-avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "Lorem Ipsum",
-	bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	links: [
-		{
-			name: "Twitter",
-			icon: "fa6-brands:twitter", // Visit https://icones.js.org/ for icon codes
-			// You will need to install the corresponding icon set if it's not already included
-			// `pnpm add @iconify-json/<icon-set-name>`
-			url: "https://twitter.com",
-		},
-		{
-			name: "Steam",
-			icon: "fa6-brands:steam",
-			url: "https://store.steampowered.com",
-		},
-		{
-			name: "GitHub",
-			icon: "fa6-brands:github",
-			url: "https://github.com/saicaca/fuwari",
-		},
+	avatar: "assets/images/afb7b48f4e1c11bf4f0b9e8e23ea777e.png", // 头像路径(相对于/src目录。如果以'/'开头则相对于/public目录)
+	name: "Delay社", // 显示名称
+	bio: "一个创作型同人社团~", // 个人简介
+	links: [ // 社交链接
+
 	],
 };
 
+// 版权许可配置
 export const licenseConfig: LicenseConfig = {
-	enable: true,
-	name: "CC BY-NC-SA 4.0",
-	url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+	enable: false, // 是否显示许可协议
+	name: "CC BY-NC-SA 4.0", // 许可名称
+	url: "https://creativecommons.org/licenses/by-nc-sa/4.0/", // 许可协议URL
 };
 
+// 代码块样式配置
 export const expressiveCodeConfig: ExpressiveCodeConfig = {
-	// Note: Some styles (such as background color) are being overridden, see the astro.config.mjs file.
-	// Please select a dark theme, as this blog theme currently only supports dark background color
-	theme: "github-dark",
+	// 注意：某些样式(如背景色)会被覆盖，请查看astro.config.mjs文件
+	// 请选择深色主题，因为当前博客主题仅支持深色背景
+	theme: "github-dark", // 代码主题
 };
