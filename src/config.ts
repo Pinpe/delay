@@ -31,11 +31,9 @@ export const siteConfig: SiteConfig = {
 		depth: 2, // 目录显示的最大标题层级(1-3)
 	},
 	favicon: [ // 网站图标配置，留空则使用默认图标
-		// {
-		//   src: '/favicon/icon.png',    // 图标路径(相对于/public目录)
-		//   theme: 'light',              // (可选)'light'或'dark'，仅在需要为深浅模式设置不同图标时使用
-		//   sizes: '32x32',              // (可选)图标尺寸，仅在需要不同尺寸图标时设置
-		// }
+		 {
+		   src: '/favicon/logo.png',    // 图标路径(相对于/public目录)
+		 }
 	],
 };
 
