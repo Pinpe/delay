@@ -64,7 +64,7 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/afb7b48f4e1c11bf4f0b9e8e23ea777e.png", // 头像路径(相对于/src目录。如果以'/'开头则相对于/public目录)
 	name: "Delay社", // 显示名称
-	bio: "一个创作型同人社团~", // 个人简介
+	bio: "请拯救具足虫社团吧~", // 个人简介
 	links: [ // 社交链接
 
 	],
